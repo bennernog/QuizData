@@ -29,6 +29,8 @@ namespace QuizData
 			randoms =  new List<int> ();
 			tv = FindViewById<TextView>(Resource.Id.Results);
 			//TODO which is best?
+
+			// -> both can be used, although I find the second one easier to read.
 			FindViewById<Button> (Resource.Id.myButton).Click += CreateDataBaseButton_Click;//like this?
 			Button PullDataButton = FindViewById<Button>(Resource.Id.myGetButton);//or like this?
 			PullDataButton.Click += PullDataButton_Click;
@@ -73,6 +75,8 @@ namespace QuizData
 			}
 			var conn = new SqliteConnection("Data Source=" + dbPath ());
 			//TODO commands info?
+			// ->  http://www.sqlite.org/lang.html
+			// -> does this help?
 			var commands = new[] { // got it to work through analysis (and trial& error), but i still don't understand these commands and how they should be constructed
 				"CREATE TABLE IF NOT EXISTS QUESTION(QUESTIONID BIGINT PRIMARY KEY, " +
 				"IMAGEID INT, QUESTIONSTRING VARCHAR(150),CORRECTANSWER VARCHAR(150),"+
@@ -100,11 +104,12 @@ namespace QuizData
 				sqlc.Connection = conn;
 				conn.Open();
 				//TODO Indentation question?
+				// -> I would do it like this
 				string strSql = "INSERT INTO QUESTION" + //what's the convention for indentation in this case?
 					"(IMAGEID, QUESTIONSTRING, CORRECTANSWER, " + 
-						"WRONGANSWER1, WRONGANSWER2,WRONGANSWER3) " +  
-						"VALUES (@IMAGEID, @QUESTIONSTRING, @CORRECTANSWER, " + 
-						"@WRONGANSWER1, @WRONGANSWER2, @WRONGANSWER3)";
+					"WRONGANSWER1, WRONGANSWER2,WRONGANSWER3) " +  
+					"VALUES (@IMAGEID, @QUESTIONSTRING, @CORRECTANSWER, " + 
+					"@WRONGANSWER1, @WRONGANSWER2, @WRONGANSWER3)";
 				
 				sqlc.CommandText = strSql;
 				sqlc.CommandType = CommandType.Text;
@@ -141,6 +146,17 @@ namespace QuizData
 			 * Why is it better to write everything to a (local)database if all the info has to be contained in the app anyways?
 			 * Isn't that double work?
 			 */
+
+			/*
+			 * -> there are databases that handle binary data (images) as blob storage. In the abstraction layer we use, we add bindary data such
+			 * as images to the object and our datamanager handles the storage.
+			 * What you could do is, store the filename as a string in the database, and load the image from there.
+			 * 
+			 * The reason we store this data locally, is 1 persistence between multiple runs of the application. Secondly, SQL allows you the 
+			 * request, filter, ... data in a structured way.
+			 * 
+			 * Does that answer your question?
+			 */ 
 			var conn = new SqliteConnection("Data Source=" + dbPath ());
 			var strSql = "select QuestionString, CorrectAnswer from Question where IMAGEID=@IMAGEID";
 			var cmd = new SqliteCommand(strSql, conn);

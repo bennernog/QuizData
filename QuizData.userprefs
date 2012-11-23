@@ -2,8 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="QuizData\Activity1.cs">
     <Files>
-      <File FileName="QuizData\Activity1.cs" Line="44" Column="17" />
-      <File FileName="QuizData\Resources\values\Arrays.xml" Line="5" Column="11" />
+      <File FileName="QuizData\Activity1.cs" Line="23" Column="3" />
+      <File FileName="QuizData\Score.cs" Line="21" Column="25" />
+      <File FileName="QuizData\ScoreCommands.cs" Line="54" Column="4" />
+      <File FileName="QuizData\ScoreHelper.cs" Line="16" Column="19" />
+      <File FileName="QuizData\Question.cs" Line="25" Column="44" />
+      <File FileName="QuizData\QuestionHelper.cs" Line="16" Column="22" />
+      <File FileName="QuizData\QuestionCommands.cs" Line="57" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

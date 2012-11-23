@@ -51,16 +51,55 @@
     <Compile Include="Activity1.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="ScoreCommands.cs" />
+    <Compile Include="ScoreHelper.cs" />
+    <Compile Include="QuestionHelper.cs" />
+    <Compile Include="QuestionCommands.cs" />
+    <Compile Include="PreviousA1.cs" />
+    <Compile Include="EndActivity.cs" />
+    <Compile Include="QuizActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\drawable\Icon.png" />
     <AndroidResource Include="Resources\values\Arrays.xml" />
+    <AndroidResource Include="Resources\layout\score.axml" />
+    <AndroidResource Include="Resources\layout\welcome.axml" />
+    <AndroidResource Include="Resources\drawable\end.jpg" />
+    <AndroidResource Include="Resources\drawable\frame1.xml" />
+    <AndroidResource Include="Resources\drawable\frame2.xml" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable\quiz.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag00.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag01.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag02.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag03.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag04.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag05.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag06.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag07.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag08.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag09.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag10.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag11.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag12.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag13.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag14.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag15.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag16.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag17.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag18.jpg" />
+    <AndroidResource Include="Resources\drawable\vraag19.jpg" />
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\layout\namePrompt.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
+  </ItemGroup>
 </Project>

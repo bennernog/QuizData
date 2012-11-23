@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/end"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:gravity="center">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:gravity="center"
+        android:layout_weight="1">
+        <TextView
+            android:text="Large Text"
+            android:textColor="#ffffffff"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:gravity="center"
+            android:background="@drawable/frame1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:gravity="bottom"
+        android:layout_weight="1">
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:gravity="center"
+            android:layout_weight="1">
+            <Button
+                android:text="Do Better"
+                android:textColor="#ffffffff"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/btnAgain"
+                android:gravity="center"
+                android:background="@drawable/frame2"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="5dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginBottom="5dip"
+                android:layout_weight="1" />
+            <Button
+                android:text="Quit"
+                android:id="@+id/btnQuit"
+                android:textColor="#ffffffff"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:background="@drawable/frame2"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="5dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginBottom="5dip"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

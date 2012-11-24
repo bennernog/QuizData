@@ -15,7 +15,7 @@ namespace QuizData
 {
 	class Score
 	{
-		public Score() { }
+		public Score () { }
 		public int ScoreID { get; set; }
 		public int ScoreNumber { get; set; }
 		public string ScoreDate { get; set; }

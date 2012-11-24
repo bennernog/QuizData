@@ -16,52 +16,61 @@ namespace QuizData
 	class ScoreCommands
 	{
 		private ScoreHelper scrHelp;
-		public ScoreCommands(Context context)
+
+		public ScoreCommands (Context context)
 		{
-			scrHelp = new ScoreHelper(context);
-			scrHelp.OnCreate(scrHelp.WritableDatabase);
+			scrHelp = new ScoreHelper (context);
+			scrHelp.OnCreate (scrHelp.WritableDatabase);
 		}
 		
-		public List<Score> GetAllScores()
+		public List<Score> GetAllScores ()
 		{
-			Android.Database.ICursor quizCursor = scrHelp.ReadableDatabase.Query("QuizScore", null, null, null, null, null, null, null);
-			var scores = new List<Score>();
-			while (quizCursor.MoveToNext())
+			Android.Database.ICursor quizCursor = scrHelp.ReadableDatabase.Query ("QuizScore", null, null, null, null, null, null, null);
+			var scores = new List<Score> ();
+			while (quizCursor.MoveToNext ())
 			{
-				Score scr = MapScores(quizCursor);
-				scores.Add(scr);
+				Score scr = MapScores (quizCursor);
+				scores.Add (scr);
 			}
 			return scores;
 		}
 		
-		public long AddScore(int scoreNumber, DateTime scoreDate, string name)
+		public long AddScore (int scoreNumber, DateTime scoreDate, string name)
 		{
-			var values = new ContentValues();
-			values.Put("ScoreNumber", scoreNumber);
-			values.Put("ScoreDate", scoreDate.ToString());
-			values.Put("PlayerName", name);
+			var values = new ContentValues ();
+			values.Put ("ScoreNumber", scoreNumber);
+			values.Put ("ScoreDate", scoreDate.ToString ());
+			values.Put ("PlayerName", name);
 			
-			return scrHelp.WritableDatabase.Insert("QuizScore", null, values);
+			return scrHelp.WritableDatabase.Insert ("QuizScore", null, values);
 		}
 		
 		
-		public void DeleteScore(int scoreID)
+		public void DeleteScore (int scoreID)
 		{
 			string[] vals = new string[1];
-			vals[0] = scoreID.ToString();
+			vals[0] = scoreID.ToString ();
 			
-			scrHelp.WritableDatabase.Delete("QuizScore", "ScoreId=?", vals);
+			scrHelp.WritableDatabase.Delete ("QuizScore", "ScoreId=?", vals);
 		}
-		private Score MapScores(Android.Database.ICursor cursor)
+		private Score MapScores (Android.Database.ICursor cursor)
 		{
-			Score scr = new Score();
-			scr.ScoreID = cursor.GetInt(0);
-			scr.ScoreDate = cursor.GetString(1);
-			scr.ScoreNumber = cursor.GetInt(2);
-			scr.PlayerName = cursor.GetString(3);
+			Score scr = new Score ();
+			scr.ScoreID = cursor.GetInt (0);
+			scr.ScoreDate = cursor.GetString (1);
+			scr.PlayerName = cursor.GetString (2);
+			scr.ScoreNumber = cursor.GetInt (3);
 			
 			return (scr);
 		}
+		public List<Score> TopScores ()
+		{
+			List<Score> scoreList = GetAllScores ();
+			scoreList = scoreList.OrderByDescending (x => x.ScoreNumber).ThenBy (x => x.ScoreDate).ToList ();
+
+			return scoreList;
+		}
+
 	}
 }
 

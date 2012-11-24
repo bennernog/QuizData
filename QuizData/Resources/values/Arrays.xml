@@ -21,5 +21,18 @@
 		<item>17_What remains of the sun after its nuclear reactions stops?_A white dwarf_A neutron star_A pulsar_A black hole</item>
 		<item>18_Which planet is called the sister planet?_Venus_Mars_Mercury_Pluto</item>
 		<item>19_How many extrasolar planets have been discover so far?_850_310_642_10</item>
-		</string-array>
+	</string-array>
+	<string-array name="scores">
+		<item>130_ddd</item>
+		<item>110_bbb</item>
+		<item>100_aaa</item>
+		<item>120_ccc</item>
+		<item>180_iii</item>
+		<item>150_fff</item>
+		<item>140_eee</item>
+		<item>190_jjj</item>
+		<item>170_hhh</item>
+		<item>160_ggg</item>
+	</string-array>
+	
 </resources>

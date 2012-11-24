@@ -21,6 +21,9 @@ namespace QuizData
 			// aapt resource value: 0x7f040000
 			public const int quiz = 2130968576;
 			
+			// aapt resource value: 0x7f040001
+			public const int scores = 2130968577;
+			
 			private Array()
 			{
 			}
@@ -47,70 +50,73 @@ namespace QuizData
 			public const int frame2 = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int icon = 2130837507;
+			public const int frame3 = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int quiz = 2130837508;
+			public const int icon = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int vraag00 = 2130837509;
+			public const int quiz = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int vraag01 = 2130837510;
+			public const int vraag00 = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int vraag02 = 2130837511;
+			public const int vraag01 = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int vraag03 = 2130837512;
+			public const int vraag02 = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int vraag04 = 2130837513;
+			public const int vraag03 = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int vraag05 = 2130837514;
+			public const int vraag04 = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int vraag06 = 2130837515;
+			public const int vraag05 = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int vraag07 = 2130837516;
+			public const int vraag06 = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int vraag08 = 2130837517;
+			public const int vraag07 = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int vraag09 = 2130837518;
+			public const int vraag08 = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int vraag10 = 2130837519;
+			public const int vraag09 = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int vraag11 = 2130837520;
+			public const int vraag10 = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int vraag12 = 2130837521;
+			public const int vraag11 = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int vraag13 = 2130837522;
+			public const int vraag12 = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int vraag14 = 2130837523;
+			public const int vraag13 = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int vraag15 = 2130837524;
+			public const int vraag14 = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int vraag16 = 2130837525;
+			public const int vraag15 = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int vraag17 = 2130837526;
+			public const int vraag16 = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int vraag18 = 2130837527;
+			public const int vraag17 = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int vraag19 = 2130837528;
+			public const int vraag18 = 2130837528;
+			
+			// aapt resource value: 0x7f020019
+			public const int vraag19 = 2130837529;
 			
 			private Drawable()
 			{
@@ -135,29 +141,98 @@ namespace QuizData
 			// aapt resource value: 0x7f060005
 			public const int btn4 = 2131099653;
 			
-			// aapt resource value: 0x7f06000b
-			public const int btnAgain = 2131099659;
+			// aapt resource value: 0x7f060022
+			public const int btnAgain = 2131099682;
 			
-			// aapt resource value: 0x7f06000c
-			public const int btnQuit = 2131099660;
+			// aapt resource value: 0x7f060023
+			public const int btnQuit = 2131099683;
 			
-			// aapt resource value: 0x7f06000d
-			public const int btnStarQuiz = 2131099661;
-			
-			// aapt resource value: 0x7f06000a
-			public const int cancel = 2131099658;
+			// aapt resource value: 0x7f060024
+			public const int btnStarQuiz = 2131099684;
 			
 			// aapt resource value: 0x7f060007
 			public const int etName = 2131099655;
 			
-			// aapt resource value: 0x7f060008
-			public const int linearLayout1 = 2131099656;
+			// aapt resource value: 0x7f06000b
+			public const int name1 = 2131099659;
 			
-			// aapt resource value: 0x7f060009
-			public const int ok = 2131099657;
+			// aapt resource value: 0x7f06001f
+			public const int name10 = 2131099679;
+			
+			// aapt resource value: 0x7f06000e
+			public const int name2 = 2131099662;
+			
+			// aapt resource value: 0x7f060011
+			public const int name3 = 2131099665;
+			
+			// aapt resource value: 0x7f060013
+			public const int name4 = 2131099667;
+			
+			// aapt resource value: 0x7f060015
+			public const int name5 = 2131099669;
+			
+			// aapt resource value: 0x7f060017
+			public const int name6 = 2131099671;
+			
+			// aapt resource value: 0x7f060019
+			public const int name7 = 2131099673;
+			
+			// aapt resource value: 0x7f06001b
+			public const int name8 = 2131099675;
+			
+			// aapt resource value: 0x7f06001d
+			public const int name9 = 2131099677;
+			
+			// aapt resource value: 0x7f060008
+			public const int ok = 2131099656;
 			
 			// aapt resource value: 0x7f060006
 			public const int score = 2131099654;
+			
+			// aapt resource value: 0x7f06000c
+			public const int score1 = 2131099660;
+			
+			// aapt resource value: 0x7f060020
+			public const int score10 = 2131099680;
+			
+			// aapt resource value: 0x7f06000f
+			public const int score2 = 2131099663;
+			
+			// aapt resource value: 0x7f060012
+			public const int score3 = 2131099666;
+			
+			// aapt resource value: 0x7f060014
+			public const int score4 = 2131099668;
+			
+			// aapt resource value: 0x7f060016
+			public const int score5 = 2131099670;
+			
+			// aapt resource value: 0x7f060018
+			public const int score6 = 2131099672;
+			
+			// aapt resource value: 0x7f06001a
+			public const int score7 = 2131099674;
+			
+			// aapt resource value: 0x7f06001c
+			public const int score8 = 2131099676;
+			
+			// aapt resource value: 0x7f06001e
+			public const int score9 = 2131099678;
+			
+			// aapt resource value: 0x7f060021
+			public const int scoreTxt = 2131099681;
+			
+			// aapt resource value: 0x7f060009
+			public const int tableLayout1 = 2131099657;
+			
+			// aapt resource value: 0x7f06000a
+			public const int tableRow1 = 2131099658;
+			
+			// aapt resource value: 0x7f06000d
+			public const int tableRow2 = 2131099661;
+			
+			// aapt resource value: 0x7f060010
+			public const int tableRow3 = 2131099664;
 			
 			// aapt resource value: 0x7f060001
 			public const int textView1 = 2131099649;

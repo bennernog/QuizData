@@ -21,12 +21,13 @@ namespace QuizData
 		
 		Question[] quiz;
 		string answer;
+
 		int[] imageId = new int[]{
 			Resource.Drawable.vraag00, Resource.Drawable.vraag01, Resource.Drawable.vraag02, Resource.Drawable.vraag03,
 			Resource.Drawable.vraag04, Resource.Drawable.vraag05, Resource.Drawable.vraag06, Resource.Drawable.vraag07,
 			Resource.Drawable.vraag08, Resource.Drawable.vraag09, Resource.Drawable.vraag10, Resource.Drawable.vraag11,
 			Resource.Drawable.vraag12, Resource.Drawable.vraag13, Resource.Drawable.vraag14, Resource.Drawable.vraag15,
-			Resource.Drawable.vraag16, Resource.Drawable.vraag17, Resource.Drawable.vraag18, Resource.Drawable.vraag19,
+			Resource.Drawable.vraag16, Resource.Drawable.vraag17, Resource.Drawable.vraag18, Resource.Drawable.vraag19
 		};
 		int count = 0, score = 0, points = 0;
 		
@@ -34,7 +35,7 @@ namespace QuizData
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			if (bundle!=null) score = bundle.GetInt("SCORE",0);
+			if (bundle!=null) score = bundle.GetInt ("SCORE",0);
 			SetContentView (Resource.Layout.Main);
 
 			mainLL = FindViewById<LinearLayout> (Resource.Id.LLmain);
@@ -50,31 +51,33 @@ namespace QuizData
 			button4.Click += button_Click;
 			
 			quiz = NewQuiz ();
-			NewQuestion(quiz);
+			NewQuestion (quiz);
 		}
 		
 		private void button_Click (object sender, EventArgs e)
 		{
-			Button btn = (Button)sender;
+			Button btn = (Button) sender;
 			if (btn.Text.Equals (answer)) {
 				count++;
-				Toast.MakeText(this, answerText(), ToastLength.Short).Show();
-				addToScore();
+				Toast.MakeText (this, answerText(), ToastLength.Short).Show();
+				addToScore ();
 				
 				if (count<10)
 				{
-					NewQuestion(quiz);
+					NewQuestion (quiz);
 				}
 				else
 				{
-					scoreDialog ();
+					Dialog d = new Dialog (this);
+					d = scoreDialog ();
+					d.Show ();
 				}
 				
 				
 			} else 
 			{
 				
-				Toast.MakeText(this, "Try Again", ToastLength.Short).Show();
+				Toast.MakeText (this, "Try Again", ToastLength.Short).Show();
 				points++;
 				
 			}
@@ -86,43 +89,45 @@ namespace QuizData
 			List<Question> allquestions = new List<Question> ();
 			try
 			{
-				var qC = new QuestionCommands(this);
-				allquestions = qC.GetAllQuestions();
+				var qC = new QuestionCommands (this);
+				allquestions = qC.GetAllQuestions ();
 			}
 			catch (System.Exception sysExc)
 			{
-				Toast.MakeText(this, sysExc.Message, ToastLength.Long);
+				Toast.MakeText (this, sysExc.Message, ToastLength.Long);
 			}
-			allquestions = Shuffle(allquestions);
+			allquestions = Shuffle (allquestions);
+
 			return allquestions.ToArray ();
 		}
 
 		public void NewQuestion(Question[] questionList)
 		{
 			Question q = questionList[count];
-			SetImage(q.ImageID);
-			SetNewQuestion(q.QuestionString);
 			answer = q.CorrectAnswer;
-			SetAnswers(answer, q.WrongAnswer1, q.WrongAnswer2, q.WrongAnswer3); 
+
+			SetImage (q.ImageID);
+			SetNewQuestion (q.QuestionString);
+			SetAnswers (answer, q.WrongAnswer1, q.WrongAnswer2, q.WrongAnswer3); 
 		}
 		
 		public void SetImage (int index)
 		{
-			mainLL.SetBackgroundResource(imageId[index]);
+			mainLL.SetBackgroundResource (imageId[index]);
 		}
 		public void SetNewQuestion (string questionString)
 		{
-			string q = String.Format("{0}. {1}", (count+1).ToString(),questionString);
+			string q = String.Format ("{0}. {1}", (count+1).ToString (),questionString);
 			tvQuestion.Text = q;
 		}
 		public void SetAnswers (string cAnswer, string wAnswer1, string wAnswer2, string wAnswer3)
 		{
 			List<string> answers = new List<string>();
-			answers.Add(cAnswer);
-			answers.Add(wAnswer1);
-			answers.Add(wAnswer2);
-			answers.Add(wAnswer3);
-			answers=Shuffle(answers);
+			answers.Add (cAnswer);
+			answers.Add (wAnswer1);
+			answers.Add (wAnswer2);
+			answers.Add (wAnswer3);
+			answers=Shuffle (answers);
 			string [] mixedAnswers = answers.ToArray();
 			
 			button1.Text = mixedAnswers[0];
@@ -177,7 +182,7 @@ namespace QuizData
 			return text;
 		}
 
-		public static List<T> Shuffle<T>( List<T> list)
+		public static List<T> Shuffle<T> ( List<T> list)
 		{
 			RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
 			int n = list.Count;
@@ -199,26 +204,27 @@ namespace QuizData
 			outState.PutInt ("SCORE", score);
 			base.OnSaveInstanceState (outState);
 		}
-		void scoreDialog ()
+		Dialog scoreDialog ()
 		{
 			Dialog dialog = new Dialog (this);
-			TextView tvScore = FindViewById<TextView> (Resource.Id.score);
-			tvScore.Text = String.Format("Your Score: {0}",score);
-			EditText input = FindViewById<EditText> (Resource.Id.etName);
-			Button ok = FindViewById<Button> (Resource.Id.ok);
-			Button cancel = FindViewById<Button> (Resource.Id.cancel);
+			dialog.SetContentView (Resource.Layout.namePrompt);
 			dialog.SetTitle ("Enter Your Name"); 
 			dialog.SetCancelable (true);
-			dialog.SetContentView (Resource.Layout.namePrompt);
+
+			TextView tvScore = (TextView) dialog.FindViewById (Resource.Id.score);
+			tvScore.Text = String.Format ("Your Score: {0}",score);
+			EditText input = (EditText) dialog.FindViewById (Resource.Id.etName);
+			Button ok = (Button) dialog.FindViewById (Resource.Id.ok);
 
 			ok.Click += delegate {
 				if (input.Text.Length > 0) {
 
-					var dbS = new ScoreCommands(this);
-					dbS.AddScore(score, DateTime.Now, input.Text);
-					Intent i = new Intent(this, typeof(EndActivity));
-					i.PutExtra("SCORE", score);
-					StartActivity(i);
+					var dbS = new ScoreCommands (this);
+					dbS.AddScore (score, DateTime.Now, input.Text);
+					Intent i = new Intent (this, typeof (EndActivity));
+					i.PutExtra ("SCORE", score);
+					StartActivity (i);
+					Finish ();
 					dialog.Cancel ();
 
 				} else {
@@ -227,12 +233,8 @@ namespace QuizData
 				
 
 			}; 
-			cancel.Click += delegate {
-				StartActivity(typeof(EndActivity));
-				dialog.Cancel ();
-			};
-			
-			dialog.Show ();
+
+			return dialog;
 		}
 	}
 }

@@ -15,7 +15,7 @@ namespace QuizData
 {
 	public class Question
 	{
-		public Question() { }
+		public Question () { }
 		public int ImageID { get; set; }
 		public string QuestionString { get; set; }
 		public string CorrectAnswer { get; set; }
